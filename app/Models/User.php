@@ -74,4 +74,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class, 'author_id');
     }
+
+    // Método para determinar si un usuario es administrador
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    // Método para determinar si un usuario es escritor
+    public function isWriter(): bool
+    {
+        return $this->role === 'escritor';
+    }
 }
