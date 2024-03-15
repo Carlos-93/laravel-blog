@@ -84,7 +84,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Carlos Araujo Galván
 
-carlos93.bcn@hotmail.com
-https://www.linkedin.com/in/carlos-araujo-galvan
+- carlos93.bcn@hotmail.com
+- https://www.linkedin.com/in/carlos-araujo-galvan
 
 Project Link: [https://github.com/Carlos-93/laravel-blog](https://github.com/Carlos-93/laravel-blog)
