@@ -13,7 +13,7 @@ This project is a blog developed with the Laravel framework, designed to showcas
 
 To run this project, you will need to have the following installed on your system:
 
--PHP >= 7.3
+- PHP >= 7.3
 - Composer
 - Node.js and NPM
 - A compatible database (MySQL, PostgreSQL, SQLite, SQL Server)
