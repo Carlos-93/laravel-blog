@@ -1,27 +1,19 @@
-# Bienvenido a Mi Blog en Laravel
+# Welcome to My Blog in Laravel
 
-Este proyecto es un blog desarrollado con el framework Laravel, diseñado para mostrar las capacidades de Laravel para construir aplicaciones web robustas y escalables. Aquí encontrarás cómo configurar y ejecutar el proyecto localmente, así como una guía básica para contribuir al mismo.
+This project is a blog developed with the Laravel framework, designed to showcase Laravel's capabilities for building robust and scalable web applications. Here you will find how to configure and run the project locally, as well as a basic guide to contributing to it.
 
-## Características
+## Characteristics
 
-- CRUD (Crear, Leer, Actualizar, Eliminar) de publicaciones
-- Sistema de autenticación
-- Comentarios en las publicaciones
-- Categorías y etiquetas para las publicaciones
+- CRUD (Create, Read, Update, Delete) of posts
+- Authentication system
+- Comments on posts
+- Categories and tags for posts
 
-## Requisitos Previos
+## Previous requirements
 
-Para ejecutar este proyecto, necesitarás tener instalado lo siguiente en tu sistema:
+To run this project, you will need to have the following installed on your system:
 
-- PHP >= 7.3
+-PHP >= 7.3
 - Composer
-- Node.js y NPM
-- Una base de datos compatible (MySQL, PostgreSQL, SQLite, SQL Server)
-
-## Instalación
-
-Sigue estos pasos para instalar el proyecto en tu entorno local:
-
-1. Clona el repositorio en tu máquina local:
-```bash
-git clone https://github.com/tu-usuario/mi-blog-laravel.git
+- Node.js and NPM
+- A compatible database (MySQL, PostgreSQL, SQLite, SQL Server)
