@@ -82,6 +82,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Carlos Araujo - [@your_twitter](https://twitter.com/your_twitter) - carlos93.bcn@hotmail.com
+- Name: Carlos Araujo Galván
+- Email: carlos93.bcn@hotmail.com
+- LinkedIn: in/carlos-araujo-galvan
 
 Project Link: [https://github.com/Carlos-93/laravel-blog](https://github.com/Carlos-93/laravel-blog)
