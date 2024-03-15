@@ -1,5 +1,7 @@
 # Welcome to My Blog in Laravel
 
+![Logo de Laravel](/favicon.png)
+
 This project is a blog developed with the Laravel framework, designed to showcase Laravel's capabilities for building robust and scalable web applications. Here you will find how to configure and run the project locally, as well as a basic guide to contributing to it.
 
 ## Characteristics
