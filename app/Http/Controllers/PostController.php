@@ -47,7 +47,13 @@ class PostController
         $post->author_id = auth()->id();
         $post->save();
 
-        return redirect()->route('posts.index', $post);
+        return redirect()->route('posts.index');
+    }
+
+    // Método para mostrar el formulario de edición de un post
+    public function edit(Post $post)
+    {
+        return view('posts.edit', compact('post'));
     }
 
     // Método para actualizar un post
@@ -62,8 +68,9 @@ class PostController
         $post->content = $request->content;
         $post->save();
 
-        return redirect()->route('posts.show', $post);
+        return redirect()->route('posts.update', $post);
     }
+
 
     // Método para eliminar un post
     public function destroy(Post $post)

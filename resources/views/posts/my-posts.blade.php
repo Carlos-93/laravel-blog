@@ -23,25 +23,23 @@
             </a>
             <!-- Número de Comentarios -->
             <p class="text-gray-600">[{{ $post->comments_count ?? '0' }}] Comentarios</p>
-            <div class="flex justify-end mt-4">
-                <a href="{{ route('posts.edit', $post) }}" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                    Editar
+            <div class="flex justify-end gap-4">
+                <a href="{{ route('posts.edit', $post) }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                    Editar Publicación
                 </a>
                 <form action="{{ route('posts.destroy', $post) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="inline-block bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110 ml-4">
-                        Eliminar
+                    <button type="submit" class="inline-block bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                        Eliminar Publicación
                     </button>
                 </form>
             </div>
         </article>
         @empty
-        <p>Todavía no hay publicaciones tuyas</p>
+        <p class="mb-10">Todavía no hay publicaciones tuyas</p>
         @endforelse
-    </div>
-    <div class="container mx-auto px-4">
-        <a href="{{ route('posts.create') }}" class="inline-block bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+        <a href="{{ route('posts.create') }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
             Nueva Publicación
         </a>
     </div>

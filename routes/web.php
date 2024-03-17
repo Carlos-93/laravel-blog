@@ -18,7 +18,7 @@ Route::middleware([
 ])->group(function () {
     // Dashboard
     Route::get('/dashboard', function () {
-        if (auth()->user()->role === 'admin') {
+        if (auth()->user()->role === 'Administrador') {
             return view('dashboard');
         }
         return redirect()->route('posts.index');

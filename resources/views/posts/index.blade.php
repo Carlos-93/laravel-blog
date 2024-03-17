@@ -15,14 +15,26 @@
             <a href="{{ route('posts.show', $post) }}" class="inline-block mb-4 text-orange-500 hover:text-orange-800 transition duration-300">Leer más...</a>
             <!-- Número de Comentarios -->
             <p class="text-gray-600">[{{ $post->comments_count ?? '0' }}] Comentarios</p>
+            @if (auth()->user()->isAdmin() || auth()->id() === $post->user_id)
+            <div class="flex justify-end gap-4">
+                <a href="{{ route('posts.edit', $post) }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                    Editar Publicación
+                </a>
+                <form action="{{ route('posts.destroy', $post) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="inline-block bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                        Eliminar Publicación
+                    </button>
+                </form>
+            </div>
+            @endif
         </article>
         @endforeach
         @if ($posts->isEmpty())
-        <p>Todavía no hay publicaciones en el BLOG</p>
+        <p class="mb-10">Todavía no hay publicaciones en el BLOG</p>
         @endif
-    </div>
-    <div class="container mx-auto px-4 py-8">
-        <a href="{{ route('posts.create') }}" class="inline-block bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+        <a href="{{ route('posts.create') }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
             Nueva Publicación
         </a>
     </div>

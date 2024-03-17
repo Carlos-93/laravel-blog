@@ -12,10 +12,10 @@
                 </div>
                 <div class="mb-6">
                     <label for="content" class="block text-gray-700 text-lg font-bold mb-2">Contenido:</label>
-                    <textarea name="content" id="content" rows="8" placeholder="Escribe aquí el contenido de tu publicación" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"></textarea>
+                    <textarea name="content" id="content" rows="10" placeholder="Escribe aquí el contenido de tu publicación" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"></textarea>
                 </div>
                 <div class="flex justify-center">
-                    <input type="submit" value="Añadir Publicación" class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded cursor-pointer transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                    <input type="submit" value="Añadir Publicación" class="bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded cursor-pointer transition duration-300 ease-in-out">
                 </div>
             </form>
         </div>

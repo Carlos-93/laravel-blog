@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->enum('role', ['Administrador', 'Escritor', 'Lector'])->default('Lector');
             $table->string('password');
-            $table->enum('role', ['admin', 'escritor', 'lector'])->default('lector');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();

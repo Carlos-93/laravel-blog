@@ -30,21 +30,31 @@
             <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
                     <x-checkbox id="remember_me" name="remember" />
-                    <span class="ms-2 text-sm text-gray-600 cursor-pointer">{{ __('Recuerdame') }}</span>
+                    <span class="ms-2 text-sm text-gray-600">{{ __('Recuerdame') }}</span>
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Olvidaste tu contraseña?') }}
-                </a>
-                @endif
+            <div class="mt-4 flex flex-col items-start">
+                <div class="flex flex-col items-start sm:items-start">
+                    @if (Route::has('password.request'))
+                    <a class="underline text-sm text-gray-600 hover:text-orange-500 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 mb-2" href="{{ route('password.request') }}">
+                        {{ __('¿Olvidaste tu contraseña?') }}
+                    </a>
+                    @endif
 
-                <x-button class="ms-4">
+                    <!-- Enlace de registro -->
+                    @if (Route::has('register'))
+                    <a class="underline text-sm text-gray-600 hover:text-orange-500 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500" href="{{ route('register') }}">
+                        {{ __('¿No tienes una cuenta? Regístrate') }}
+                    </a>
+                    @endif
+                </div>
+
+                <x-button class="self-center sm:self-end mt-6 sm:mt-0">
                     {{ __('Iniciar Sesión') }}
                 </x-button>
             </div>
+
         </form>
     </x-authentication-card>
 </x-guest-layout>

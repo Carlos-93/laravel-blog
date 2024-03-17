@@ -36,6 +36,7 @@ class UserController
 
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->role = $request->role;
         $user->save();
 
         return redirect()->route('users.index');

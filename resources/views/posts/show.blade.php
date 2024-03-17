@@ -2,7 +2,8 @@
 
 <x-app-layout>
     <div class="container mx-auto px-4 pt-24 py-8">
-        <article class="mb-12 p-6 bg-white rounded-lg shadow">
+        <h1 class="text-3xl font-bold my-10">Historial de la publicación</h1>
+        <article class="mb-12 p-6 bg-white rounded-lg shadow w-3/5">
             <!-- Título del Post -->
             <h1 class="text-2xl font-bold mb-2 text-orange-500 hover:text-orange-600 transition duration-300">{{ $post->title }}</h1>
             <!-- Contenido del Post -->
