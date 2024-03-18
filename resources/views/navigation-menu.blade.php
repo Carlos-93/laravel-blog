@@ -15,14 +15,28 @@
                     <x-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.index')">
                         {{ __('BLOG') }}
                     </x-nav-link>
+                    <!-- Mis Comentarios -->
+                    @auth
+                    <x-nav-link href="{{ route('comments.my-comments') }}" :active="request()->routeIs('comments.my-comments')">
+                        {{ __('Mis Comentarios') }}
+                    </x-nav-link>
+                    @endauth
                     <!-- Mis Publicaciones -->
+                    @auth
+                    @if (auth()->user()->role === 'Administrador' || auth()->user()->role === 'Escritor')
                     <x-nav-link href="{{ route('posts.my-posts') }}" :active="request()->routeIs('posts.my-posts')">
                         {{ __('Mis Publicaciones') }}
                     </x-nav-link>
+                    @endif
+                    @endauth
                     <!-- Nueva Publicación -->
+                    @auth
+                    @if (auth()->user()->role === 'Administrador' || auth()->user()->role === 'Escritor')
                     <x-nav-link href="{{ route('posts.create') }}" :active="request()->routeIs('posts.create')">
                         {{ __('Nueva Publicación') }}
                     </x-nav-link>
+                    @endif
+                    @endauth
                     <!-- Panel de Administración -->
                     @auth
                     @if (auth()->user()->role === 'Administrador')

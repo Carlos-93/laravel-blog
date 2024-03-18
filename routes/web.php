@@ -35,6 +35,7 @@ Route::middleware([
     Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
     // Rutas para los Comentarios
+    Route::get('/comments/my-comments', [CommentController::class, 'myComments'])->name('comments.my-comments');
     Route::get('/comments', [CommentController::class, 'index'])->name('comments.index');
     Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
     Route::get('/posts/{post}/comments/create', [CommentController::class, 'create'])->name('comments.create')->middleware('auth');

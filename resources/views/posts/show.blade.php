@@ -21,11 +21,11 @@
                 <!-- Botones de Editar y Eliminar para Administradores o el Autor del comentario -->
                 @if(auth()->user()->role == 'Administrador' || auth()->id() == $comment->author_id)
                 <div class="flex justify-end gap-4">
-                    <a href="{{ route('comments.edit', $comment) }}" class="text-orange-500 hover:text-orange-700 transition duration-300">Editar comentario</a>
+                    <a href="{{ route('comments.edit', $comment) }}" class="font-bold text-orange-500 hover:text-orange-700 transition duration-300">Editar comentario</a>
                     <form action="{{ route('comments.destroy', $comment) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="text-red-500 hover:text-red-700 transition duration-300">Eliminar comentario</button>
+                        <button type="submit" class="font-bold text-red-500 hover:text-red-700 transition duration-300">Eliminar comentario</button>
                     </form>
                 </div>
                 @endif

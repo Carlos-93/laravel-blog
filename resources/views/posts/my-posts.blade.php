@@ -23,22 +23,22 @@
             <a href="{{ route('comments.create', ['post' => $post->id]) }}" class="text-orange-500 hover:text-orange-700 cursor-pointer transition duration-300">Dejar un comentario <span class="ml-5 font-bold text-gray-600 cursor-default">[ {{ $post->comments_count }} ] Comentario/s</span></a>
             <!-- Botones de Acción -->
             <div class="flex justify-end gap-4">
-                <a href="{{ route('posts.edit', $post) }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                <a href="{{ route('posts.edit', $post) }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-1.5 px-2.5 rounded transition duration-300 ease-in-out">
                     Editar Publicación
                 </a>
                 <form action="{{ route('posts.destroy', $post) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="inline-block bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                    <button type="submit" class="inline-block bg-red-500 hover:bg-red-400 text-white font-bold py-1.5 px-2.5 rounded transition duration-300 ease-in-out">
                         Eliminar Publicación
                     </button>
                 </form>
             </div>
         </article>
         @empty
-        <p class="mb-10">Todavía no hay publicaciones tuyas</p>
+        <p class="mb-10">Todavía no hay publicaciones tuyas en la web</p>
         @endforelse
-        <a href="{{ route('posts.create') }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+        <a href="{{ route('posts.create') }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-1.5 px-2.5 rounded transition duration-300 ease-in-out">
             Nueva Publicación
         </a>
     </div>

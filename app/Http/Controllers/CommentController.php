@@ -16,6 +16,13 @@ class CommentController
         return view('comments.index', compact('comments'));
     }
 
+    // Método para mostrar los comentarios del usuario
+    public function myComments()
+    {
+        $comments = Comment::where('author_id', auth()->id())->get();
+        return view('comments.my-comments', compact('comments'));
+    }
+
     // Método para mostrar un comentario
     public function show(Comment $comment)
     {
@@ -42,7 +49,7 @@ class CommentController
         $comment->post_id = $request->post_id;
         $comment->save();
 
-        return back()->with('success', 'Comentario añadido correctamente.');
+        return redirect()->route('posts.show', $request->post_id);
     }
 
     // Método para mostrar el formulario de edición de un comentario
@@ -68,6 +75,6 @@ class CommentController
     public function destroy(Comment $comment)
     {
         $comment->delete();
-        return redirect()->route('comments.index');
+        return redirect()->route('posts.show', $comment->post_id);
     }
 }

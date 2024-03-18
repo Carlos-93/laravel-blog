@@ -12,19 +12,19 @@
             <!-- Información del Autor y Fecha de Publicación -->
             <p class="mb-4 text-gray-400">Publicado por <span class="font-bold text-gray-600">{{ $post->author->name ?? 'Usuario desconocido' }}</span> el {{ $post->created_at->format('d/m/Y') }} a las {{ $post->created_at->format('H:i') }}h</p>
             <!-- Leer Más... -->
-            <a href="{{ route('posts.show', $post) }}" class="inline-block mb-4 text-red-500 hover:text-red-800 transition duration-300">Leer más...</a><br>
+            <a href="{{ route('posts.show', $post) }}" class="font-bold inline-block mb-4 text-red-500 hover:text-red-800 transition duration-300">Leer más...</a><br>
             <!-- Número de Comentarios -->
-            <a href="{{ route('comments.create', ['post' => $post->id]) }}" class="text-orange-500 hover:text-orange-700 cursor-pointer transition duration-300">Dejar un comentario <span class="ml-5 font-bold text-gray-600 cursor-default">[ {{ $post->comments_count }} ] Comentario/s</span></a>
+            <a href="{{ route('comments.create', ['post' => $post->id]) }}" class="font-bold text-orange-500 hover:text-orange-700 cursor-pointer transition duration-300">Dejar un comentario <span class="ml-5 font-bold text-gray-600 cursor-default">[ {{ $post->comments_count }} ] Comentario/s</span></a>
             <!-- Botones de Acción para el Administrador y el Autor -->
             @if (Auth::user() && (Auth::user()->isAdmin() || Auth::user()->id === $post->author_id))
             <div class="flex justify-end gap-4">
-                <a href="{{ route('posts.edit', $post) }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                <a href="{{ route('posts.edit', $post) }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-1.5 px-2.5 rounded transition duration-300 ease-in-out">
                     Editar Publicación
                 </a>
                 <form action="{{ route('posts.destroy', $post) }}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="inline-block bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
+                    <button type="submit" class="inline-block bg-red-500 hover:bg-red-400 text-white font-bold py-1.5 px-2.5 rounded transition duration-300 ease-in-out">
                         Eliminar Publicación
                     </button>
                 </form>
@@ -35,8 +35,11 @@
         @if ($posts->isEmpty())
         <p class="mb-10">Todavía no hay publicaciones en el BLOG</p>
         @endif
-        <a href="{{ route('posts.create') }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
-            Nueva Publicación
+        <!-- Botón para Crear una Nueva Publicación -->
+        @if (Auth::user() && (Auth::user()->isAdmin() || Auth::user()->isWriter()))
+        <a href="{{ route('posts.create') }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-1.5 px-2.5 rounded transition duration-300 ease-in-out">
+            Crear Nueva Publicación
         </a>
+        @endif
     </div>
 </x-app-layout>
