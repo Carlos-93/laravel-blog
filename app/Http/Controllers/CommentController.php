@@ -23,23 +23,32 @@ class CommentController
     }
 
     // Método para crear un comentario
-    public function create()
+    public function create(Post $post)
     {
-        return view('comments.create');
+        return view('comments.create', compact('post'));
     }
 
     // Método para agregar un comentario a un post
-    public function store(Request $request, Post $post)
+    public function store(Request $request)
     {
         $request->validate([
             'content' => 'required',
+            'post_id' => 'required|exists:posts,id',
         ]);
 
         $comment = new Comment();
         $comment->content = $request->content;
         $comment->author_id = auth()->id();
-        $post->comments()->save($comment);
-        return back();
+        $comment->post_id = $request->post_id;
+        $comment->save();
+
+        return back()->with('success', 'Comentario añadido correctamente.');
+    }
+
+    // Método para mostrar el formulario de edición de un comentario
+    public function edit(Comment $comment)
+    {
+        return view('comments.edit', compact('comment'));
     }
 
     // Método para actualizar un comentario

@@ -10,7 +10,7 @@ class PostController
     // Método para mostrar todos los posts
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::withCount('comments')->orderBy('created_at', 'desc')->get();
         return view('posts.index', compact('posts'));
     }
 

@@ -1,4 +1,4 @@
-@section('title', 'Panel de Administrador')
+@section('title', 'Panel de Administración')
 
 <x-app-layout>
     <div class="container mx-auto px-4 pt-24 py-8">

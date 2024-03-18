@@ -36,14 +36,17 @@ Route::middleware([
 
     // Rutas para los Comentarios
     Route::get('/comments', [CommentController::class, 'index'])->name('comments.index');
-    Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
+    Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+    Route::get('/posts/{post}/comments/create', [CommentController::class, 'create'])->name('comments.create')->middleware('auth');
+    Route::get('/comments/{comment}/edit', [CommentController::class, 'edit'])->name('comments.edit');
     Route::put('/comments/{comment}', [CommentController::class, 'update'])->name('comments.update');
     Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy');
+    Route::get('/comments/{comment}', [CommentController::class, 'show'])->name('comments.show');
 
     // Rutas para los Usuarios
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
     Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+    Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
 });
