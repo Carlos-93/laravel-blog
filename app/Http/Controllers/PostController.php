@@ -17,9 +17,13 @@ class PostController
     // Método para mostrar los posts del usuario
     public function myPosts()
     {
-        $posts = Post::where('author_id', auth()->id())->orderBy('created_at', 'desc')->get();
+        $posts = Post::where('author_id', auth()->id())
+            ->withCount('comments')
+            ->orderBy('created_at', 'desc')
+            ->get();
         return view('posts.my-posts', compact('posts'));
     }
+
 
     // Método para mostrar un post
     public function show(Post $post)
