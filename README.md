@@ -1,6 +1,6 @@
 <img src="https://github.com/Carlos-93/laravel-blog/blob/main/public/favicon.png?raw=true" width="150">
 
-# Welcome to My Blog in Laravel
+# Welcome to my Blog in Laravel
 
 This project is a blog developed with the Laravel framework, designed to showcase Laravel's capabilities for building robust and scalable web applications. Here you will find how to configure and run the project locally, as well as a basic guide to contributing to it.
 
