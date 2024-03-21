@@ -38,7 +38,7 @@
         <!-- Botón para Crear una Nueva Publicación -->
         @if (Auth::user() && (Auth::user()->isAdmin() || Auth::user()->isWriter()))
         <a href="{{ route('posts.create') }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-1.5 px-2.5 rounded transition duration-300 ease-in-out">
-            Crear Nueva Publicación
+            Nueva Publicación
         </a>
         @endif
     </div>

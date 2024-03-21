@@ -12,14 +12,14 @@ class CommentController
     // Método para mostrar todos los comentarios
     public function index()
     {
-        $comments = Comment::all();
+        $comments = Comment::orderBy('created_at', 'desc')->get();
         return view('comments.index', compact('comments'));
     }
 
     // Método para mostrar los comentarios del usuario
     public function myComments()
     {
-        $comments = Comment::where('author_id', auth()->id())->get();
+        $comments = Comment::where('author_id', auth()->id())->orderBy('created_at', 'desc')->get();
         return view('comments.my-comments', compact('comments'));
     }
 

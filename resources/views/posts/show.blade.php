@@ -9,6 +9,8 @@
             <p class="mb-4 font-medium">{{ $post->content }}</p>
             <!-- Información del Autor y Fecha de Publicación -->
             <p class="mb-4 text-gray-400">Publicado por <span class="font-bold text-gray-600">{{ $post->author->name ?? 'Usuario desconocido' }}</span> el {{ $post->created_at->format('d/m/Y') }} a las {{ $post->created_at->format('H:i') }}h</p>
+            <!-- Número de Comentarios -->
+            <a href="{{ route('comments.create', ['post' => $post->id]) }}" class="font-bold text-orange-500 hover:text-orange-700 cursor-pointer transition duration-300">Dejar un comentario <span class="ml-5 font-bold text-gray-600 cursor-default">[ {{ $post->comments_count }} ] Comentario/s</span></a>
         </article>
 
         <section class="mt-8 w-3/5">

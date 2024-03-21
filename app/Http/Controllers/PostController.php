@@ -24,10 +24,16 @@ class PostController
         return view('posts.my-posts', compact('posts'));
     }
 
-
-    // Método para mostrar un post
+    // Método para mostrar un post y sus comentarios asociados
     public function show(Post $post)
     {
+        $post = Post::where('id', $post->id)
+            ->with(['comments' => function ($query) {
+                $query->orderBy('created_at', 'desc');
+            }])
+            ->withCount('comments')
+            ->firstOrFail();
+
         return view('posts.show', compact('post'));
     }
 

@@ -18,9 +18,9 @@
                 Publicado el {{ $post->created_at->format('d/m/Y') }} a las {{ $post->created_at->format('H:i') }}h
             </p>
             <!-- Leer Más... -->
-            <a href="{{ route('posts.show', $post) }}" class="inline-block mb-4 text-red-500 hover:text-red-800 transition duration-300">Leer más...</a><br>
+            <a href="{{ route('posts.show', $post) }}" class="font-bold inline-block mb-4 text-red-500 hover:text-red-800 transition duration-300">Leer más...</a><br>
             <!-- Número de Comentarios -->
-            <a href="{{ route('comments.create', ['post' => $post->id]) }}" class="text-orange-500 hover:text-orange-700 cursor-pointer transition duration-300">Dejar un comentario <span class="ml-5 font-bold text-gray-600 cursor-default">[ {{ $post->comments_count }} ] Comentario/s</span></a>
+            <a href="{{ route('comments.create', ['post' => $post->id]) }}" class="font-bold text-orange-500 hover:text-orange-700 cursor-pointer transition duration-300">Dejar un comentario <span class="ml-5 font-bold text-gray-600 cursor-default">[ {{ $post->comments_count }} ] Comentario/s</span></a>
             <!-- Botones de Acción -->
             <div class="flex justify-end gap-4">
                 <a href="{{ route('posts.edit', $post) }}" class="inline-block bg-orange-500 hover:bg-orange-400 text-white font-bold py-1.5 px-2.5 rounded transition duration-300 ease-in-out">
